@@ -41,6 +41,8 @@ import { MemberEditResolver } from './_resovlers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { ListsResolver } from './_resovlers/lists.resolver';
+import { MessagesResolver } from './_resovlers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -66,6 +68,7 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     MemberEditComponent,
     PhotoEditorComponent,
     TimeAgoExtendsPipe,
+    MemberMessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +103,7 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
     AuthGuard,
     AlertifyService,
     PreventUnsavedChanges,
+    MessagesResolver,
   ],
   bootstrap: [AppComponent],
 })
